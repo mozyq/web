@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mozyq.org</title>
+  <script type="module" crossorigin src="./assets/index-CQVLOz8n.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-C1uRPb73.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="vid">
+            <video autoplay loop>
+                <source src="video.mp4">
+            </video>
+        </div>
+        <div class="code">
+            <code>&gt; pip install mozyq</code>
+            <code>&gt; mkdir photos && seq -f '%03g' 999 | xargs -I {} -n 1 -P 32 wget https://picsum.photos/630 -O photos/{}.jpg</code>
+            <code>&gt; mzq photos/0000.jpg</code>
+        </div>
+    </div>
+</body>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        background: linear-gradient(30deg, #444 0%, #333 100%);
+        font-family: "Roboto Mono", monospace;
+        font-optical-sizing: auto;
+        color: #ddd;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .vid {
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        margin-right: 3em;
+    }
+
+    .code {
+        background-color: #303030;
+        padding: 1em;
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    code {
+        font-size: 1.1em;
+        display: block;
+    }
+</style>
+
+</html>
