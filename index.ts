@@ -9,4 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('code').forEach((block) => {
         hljs.highlightElement(block)
     })
+
+    const video = document.getElementById('video') as HTMLVideoElement
+    video.play()
 })
