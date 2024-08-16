@@ -1,5 +1,8 @@
 import type { UserConfig } from 'vite'
 
 export default {
-    base: ''
+    base: '',
+    build: {
+        outDir: 'docs',
+    },
 } satisfies UserConfig
