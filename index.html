@@ -15,24 +15,26 @@
 </head>
 
 <body>
-    <section class="head">
-        <div class="row center">
-            <span class="icon big">auto_awesome_mosaic</span>
-            <h1>mozyq.org</h1>
-        </div>
-        <div class="vid shadow">
-            <video id='video' autoplay loop muted>
-                <source src="video.mp4">
-            </video>
-        </div>
-    </section>
-    <section>
-        <div class="code shadow">
-            <code>&gt; pip install mozyq</code>
-            <code>&gt; mkdir photos && seq -f '%03g' 999 | xargs -I {} -n 1 -P 32 wget https://picsum.photos/630 -O photos/{}.jpg</code>
-            <code>&gt; mzq photos/0000.jpg</code>
-        </div>
-    </section>
+    <main>
+        <section class="head">
+            <div class="row center">
+                <span class="icon big">auto_awesome_mosaic</span>
+                <h1>mozyq.org</h1>
+            </div>
+            <div class="vid shadow">
+                <video id='video' autoplay loop muted>
+                    <source src="video.mp4">
+                </video>
+            </div>
+        </section>
+        <section>
+            <div class="code shadow">
+                <code>&gt; pip install mozyq</code>
+                <code>&gt; mkdir photos && seq -f '%03g' 999 | xargs -I {} -n 1 -P 32 wget https://picsum.photos/630 -O photos/{}.jpg</code>
+                <code>&gt; mzq photos/0000.jpg</code>
+            </div>
+        </section>
+    </main>
 </body>
 
 <style>
@@ -61,33 +63,37 @@
         font-size: 3em;
     }
 
-    h1 {
-        font-family: 'Lexend', sans-serif;
-        font-size: 1.5em;
-        font-weight: 900;
-        color: #ccc;
-    }
-
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
 
+
     body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         padding-bottom: 10em;
         overflow-y: scroll;
+        overflow-x: hidden;
         background: linear-gradient(30deg, #404040 0%, #252525 100%);
         font-family: "Roboto Mono", monospace;
         font-optical-sizing: auto;
         color: #eee;
+        width: 100vw;
+
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
     }
 
     section {
         padding: 3em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     section.head {
@@ -100,6 +106,14 @@
     section.head .icon {
         margin-right: .1em;
     }
+
+    h1 {
+        font-family: 'Lexend', sans-serif;
+        font-size: 1.5em;
+        font-weight: 900;
+        color: #ccc;
+    }
+
 
     .shadow {
         box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
