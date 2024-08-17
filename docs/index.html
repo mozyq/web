@@ -19,26 +19,31 @@
 
 <body>
     <main>
-        <section class="head">
-            <div class="row center">
-                <span class="icon big">auto_awesome_mosaic</span>
+        <!-- HEAD -->
+        <div class="head row center">
+            <span class="icon big">auto_awesome_mosaic</span>
+            <div class="col">
                 <h1>mozyq.org</h1>
+                <h2>The best mosaic generator I made last night.</h2>
             </div>
-            <h2>The best mosaic generator I made last night.</h2>
-            <div class="vid shadow">
-                <video id='video' autoplay loop muted>
-                    <source src="video.mp4">
-                </video>
-            </div>
-        </section>
-        <section>
-            <div class="code shadow">
-                <code>&gt; sudo apt install ffmpeg</code>
-                <code>&gt; pip install mozyq</code>
-                <code>&gt; mkdir photos && seq -f '%03g' 999 | xargs -I {} -n 1 -P 32 wget https://picsum.photos/630 -O photos/{}.jpg</code>
-                <code>&gt; mzq photos/0000.jpg</code>
-            </div>
-        </section>
+        </div>
+        <!-- VIDEO -->
+        <div class="vid shadow">
+            <video id='video' autoplay loop muted>
+                <source src="video.mp4">
+            </video>
+        </div>
+        <!-- CODE -->
+        <div class="code shadow">
+            <code># Need to install ffmpeg</code>
+            <code>&gt; sudo apt install ffmpeg</code>
+            <code># Install mozyq</code>
+            <code>&gt; pip install mozyq</code>
+            <code># Grab some photos</code>
+            <code>&gt; mkdir photos && seq -f '%03g' 999 | xargs -I {} -n 1 -P 32 wget https://picsum.photos/630 -O photos/{}.jpg</code>
+            <code># Create an awesome video</code>
+            <code>&gt; mzq photos/0000.jpg</code>
+        </div>
     </main>
 </body>
 
@@ -65,7 +70,7 @@
     }
 
     .icon.big {
-        font-size: 3em;
+        font-size: 5em;
     }
 
     * {
@@ -93,22 +98,8 @@
         align-items: center;
     }
 
-    section {
-        padding: 3em;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    section.head {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-
-    section.head .icon {
-        margin-right: .1em;
+    .head {
+        margin-top: 5em;
     }
 
     h1 {
@@ -128,8 +119,13 @@
         box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     }
 
+    .vid {
+        margin: 8em 0;
+    }
+
     video {
         height: 100%;
+        margin-bottom: -4px;
     }
 
     .row {
@@ -149,6 +145,25 @@
     code {
         font-size: 1.1em;
         display: block;
+    }
+
+    @media (max-width: 650px) {
+        .shadow {
+            box-shadow: none;
+        }
+
+        .head,
+        .code {
+            display: none;
+        }
+
+        body {
+            background: #252525;
+        }
+
+        .vid {
+            width: 100vw;
+        }
     }
 </style>
 
