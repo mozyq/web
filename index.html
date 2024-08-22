@@ -39,7 +39,7 @@
             <code># Install mozyq</code>
             <code>&gt; pip install mozyq</code>
             <code># Grab some photos</code>
-            <code>&gt; mkdir photos && seq -f '%03g' 999 | xargs -I {} -n 1 -P 32 wget https://picsum.photos/630 -O photos/{}.jpg</code>
+            <code>&gt; mkdir photos && seq 999 | xargs -I {} -n 1 -P 32 wget https://picsum.photos/630 -O photos/{}.jpg</code>
             <code># Create an awesome video</code>
             <code>&gt; mzq photos/0000.jpg</code>
         </div>
