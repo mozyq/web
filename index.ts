@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function progress() {
+        console.log('progress')
         prog.innerText = `${video.buffered.end(0)}`
         prog.style.width = `${video.buffered.end(0) / video.duration * 100}%`
     }
