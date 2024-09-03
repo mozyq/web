@@ -83,6 +83,7 @@ h2 {
     transform: translateY(290px);
     color: #333;
     font-size: 32px;
+    transition: all 1s;
 }
 
 #vid-cont {
