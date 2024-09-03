@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     const video = document.getElementById('video') as HTMLVideoElement
-    video.play()
+    // video.play()
 
     video.addEventListener('loadeddata', () => {
         console.log('loaded')
