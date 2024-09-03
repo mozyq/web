@@ -9,14 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const video = document.getElementById('video') as HTMLVideoElement
     // video.play()
 
-    video.addEventListener('loadeddata', () => {
+    function hideProg() {
         console.log('loadeddata')
         const vidCont = document.getElementById('vid-cont') as HTMLDivElement
         const prog = document.getElementById('prog') as HTMLDivElement
 
         vidCont.style.opacity = "1"
         prog.style.display = 'none'
-    })
+    }
+
+    video.addEventListener('loadeddata', hideProg)
+    video.addEventListener('playing', hideProg)
 
     hljs.registerLanguage('bash', bash)
 
