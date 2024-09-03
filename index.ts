@@ -6,22 +6,22 @@ import './src/index.css'
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded')
+    const vidCont = document.getElementById('vid-cont') as HTMLDivElement
     const video = document.getElementById('video') as HTMLVideoElement
-    // video.play()
+    const prog = document.getElementById('prog') as HTMLDivElement
 
-    function hideProg(e: Event) {
-        console.log('hideProg')
-        console.log(e)
-
-        const vidCont = document.getElementById('vid-cont') as HTMLDivElement
-        const prog = document.getElementById('prog') as HTMLDivElement
-
+    function hideProg() {
         vidCont.style.opacity = "1"
         prog.style.display = 'none'
     }
 
-    video.addEventListener('loadeddata', hideProg)
-    video.addEventListener('playing', hideProg)
+    function progress() {
+        prog.innerText = `${video.buffered.end(0)}`
+        prog.style.width = `${video.buffered.end(0) / video.duration * 100}%`
+    }
+
+    video.addEventListener('progress', progress)
+    video.addEventListener('canplay', hideProg)
 
     hljs.registerLanguage('bash', bash)
 
