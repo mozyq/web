@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded')
     const vidCont = document.getElementById('vid-cont') as HTMLDivElement
     const video = document.getElementById('video') as HTMLVideoElement
-    const vidSrc = document.getElementById('vid-src') as HTMLSourceElement
     const prog = document.getElementById('prog') as HTMLDivElement
 
     function hideProg() {
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('progress')
         console.log(percent)
         prog.innerText = `${percent}%`
-        prog.style.width = `${video.buffered.end(0) / video.duration * 100 * 630}px`
+        prog.style.width = `${video.buffered.end(0) / video.duration * 630}px`
     }
 
     video.addEventListener('progress', progress)
@@ -34,5 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
         hljs.highlightElement(block)
     })
 
-    vidSrc.src = 'video.mp4'
+    const source = document.createElement("source")
+    source.setAttribute(
+        "src",
+        "https://mozyq.org/video.mp4")
+
+    source.setAttribute("type", "video/mp4")
+
+    video.appendChild(source)
 })
