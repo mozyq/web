@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const prog = document.getElementById('prog') as HTMLDivElement
 
     function hideProg() {
+        console.log('hideProg')
         vidCont.style.opacity = "1"
         prog.style.display = 'none'
     }
