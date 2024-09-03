@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     video.addEventListener('progress', progress)
-    video.addEventListener('canplay', hideProg)
+    video.addEventListener('loadeddata', hideProg)
 
     hljs.registerLanguage('bash', bash)
 
