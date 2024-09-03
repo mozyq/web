@@ -17,11 +17,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function progress() {
-        const percent = (video.buffered.end(0) / video.duration * 100).toFixed(2)
         console.log('progress')
+
+        if (video.buffered.length === 0) {
+            return
+        }
+
+
+        const end = video.buffered.end(0)
+        const duration = video.duration
+        const percent = (end / duration * 100).toFixed(2)
+
         console.log(percent)
+
         prog.innerText = `${percent}%`
-        prog.style.width = `${video.buffered.end(0) / video.duration * 630}px`
+        prog.style.width = `${end / duration * 630}px`
     }
 
     video.addEventListener('progress', progress)
