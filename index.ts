@@ -42,13 +42,4 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('code').forEach((block) => {
         hljs.highlightElement(block)
     })
-
-    const source = document.createElement("source")
-    source.setAttribute(
-        "src",
-        "https://mozyq.org/video.mp4")
-
-    source.setAttribute("type", "video/mp4")
-
-    video.appendChild(source)
 })
