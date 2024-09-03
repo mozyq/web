@@ -5,16 +5,12 @@ import './src/index.css'
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    hljs.registerLanguage('bash', bash)
-    document.querySelectorAll('code').forEach((block) => {
-        hljs.highlightElement(block)
-    })
-
+    console.log('DOMContentLoaded')
     const video = document.getElementById('video') as HTMLVideoElement
     // video.play()
 
     video.addEventListener('loadeddata', () => {
-        console.log('loaded')
+        console.log('loadeddata')
         const vidCont = document.getElementById('vid-cont') as HTMLDivElement
         const prog = document.getElementById('prog') as HTMLDivElement
 
@@ -22,4 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
         prog.style.display = 'none'
     })
 
+    hljs.registerLanguage('bash', bash)
+
+    document.querySelectorAll('code').forEach((block) => {
+        hljs.highlightElement(block)
+    })
 })
