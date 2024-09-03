@@ -81,6 +81,8 @@ h2 {
     background: linear-gradient(30deg, #bbb 0%, #eee 100%);
     border-radius: 25px;
     transform: translateY(290px);
+    color: #333;
+    font-size: 32px;
 }
 
 #vid-cont {
