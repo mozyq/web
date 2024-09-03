@@ -9,8 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const video = document.getElementById('video') as HTMLVideoElement
     // video.play()
 
-    function hideProg() {
-        console.log('loadeddata')
+    function hideProg(e: Event) {
+        console.log('hideProg')
+        console.log(e)
+
         const vidCont = document.getElementById('vid-cont') as HTMLDivElement
         const prog = document.getElementById('prog') as HTMLDivElement
 
