@@ -84,6 +84,9 @@ h2 {
     color: #333;
     font-size: 32px;
     transition: all 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #vid-cont {
