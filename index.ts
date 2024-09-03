@@ -5,7 +5,6 @@ import './src/index.css'
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log(hljs)
     hljs.registerLanguage('bash', bash)
     document.querySelectorAll('code').forEach((block) => {
         hljs.highlightElement(block)
