@@ -34,7 +34,8 @@
             </div>
         </div>
         <!-- VIDEO -->
-        <div class="vid shadow">
+        <div id="prog"></div>
+        <div id="vid-cont" class="shadow">
             <video id='video' autoplay loop muted>
                 <source src="video.mp4">
             </video>
@@ -53,6 +54,13 @@
     </main>
 </body>
 
+<script>
+    document.getElementById('video').addEventListener('loadeddata', () => {
+        document.getElementById('vid-cont').style.opacity = 1;
+        document.getElementById('prog').style.display = 'none';
+    });
+</script>
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
@@ -61,6 +69,16 @@
         font-style: normal;
         font-weight: 100 700;
         src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v205/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2) format('woff2');
+    }
+
+    @keyframes prog {
+        0% {
+            width: 0;
+        }
+
+        100% {
+            width: 630px;
+        }
     }
 
     .badge {
@@ -134,12 +152,24 @@
         box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     }
 
-    .vid {
+    #prog {
+        width: 630px;
+        height: 50px;
+        background: linear-gradient(30deg, #bbb 0%, #eee 100%);
+        border-radius: 25px;
+        transform: translateY(290px);
+        animation: prog 5s;
+    }
+
+    #vid-cont {
         margin: 5em 0;
+        opacity: 0;
+        transition: all 1s;
     }
 
     video {
-        height: 100%;
+        height: 630px;
+        width: 630px;
         margin-bottom: -4px;
     }
 
@@ -179,7 +209,7 @@
             overflow-x: hidden;
         }
 
-        .vid,
+        #vid-cont,
         video {
             width: 100vw;
         }
